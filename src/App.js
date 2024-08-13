@@ -1,15 +1,14 @@
-import './App.css';
-import Container from './components/Container';
-import Header from './components/Header';
-// import Header from './components/Header';
+import './App.css'
+import Container from './components/Container'
+import Header from './components/Header'
 
 function App() {
   return (
-    <div className='mainPage'>
-      <Header/>
-      <Container/>
+    <div className="mainPage">
+      <Header />
+      <Container />
     </div>
-  );
+  )
 }
 
-export default App;
+export default App

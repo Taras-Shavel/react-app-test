@@ -1,9 +1,9 @@
-import * as React from 'react';
-import Accordion from '@mui/material/Accordion';
-import AccordionSummary from '@mui/material/AccordionSummary';
-import AccordionDetails from '@mui/material/AccordionDetails';
-import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
-import accordion from "../data/accordion.json"
+import * as React from 'react'
+import Accordion from '@mui/material/Accordion'
+import AccordionSummary from '@mui/material/AccordionSummary'
+import AccordionDetails from '@mui/material/AccordionDetails'
+import ExpandMoreIcon from '@mui/icons-material/ExpandMore'
+import accordion from '../data/accordion.json'
 
 export default function AccordionUsage() {
   return (
@@ -18,17 +18,21 @@ export default function AccordionUsage() {
           GATEGORY
         </AccordionSummary>
         <AccordionDetails className="h-[372px] p-[12px] bg-[#FDF8F5] box-border overflow-y-auto">
-            {
-                accordion.map((acc) => (
-                    <div key={acc.id} className="h-12 bg-white px-4 py-3 rounded mb-2.5 flex items-center">
-                        <img className="w-6 h-6 mr-[16px]" src={acc.icon} alt={acc.title}/>
-                        <h3 className="text-sm font-medium">{acc.title}</h3>
-                    </div>
-                ))
-            }
-          
+          {accordion.map((acc) => (
+            <div
+              key={acc.id}
+              className="h-12 bg-white px-4 py-3 rounded mb-2.5 flex items-center"
+            >
+              <img
+                className="w-6 h-6 mr-[16px]"
+                src={acc.icon}
+                alt={acc.title}
+              />
+              <h3 className="text-sm font-medium">{acc.title}</h3>
+            </div>
+          ))}
         </AccordionDetails>
       </Accordion>
     </div>
-  );
+  )
 }
