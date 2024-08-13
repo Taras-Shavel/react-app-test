@@ -1,5 +1,4 @@
 import React from "react";
-import css from "../styles/Container.module.css"
 import Brands from "./Brands";
 import Accordion from "./Accordion";
 import SpaSlider from "./SpaSlider";
@@ -8,7 +7,7 @@ import OtherSlider from "./OtherSlider";
 
 function Container() {
     return (
-        <div className={css.container}>
+        <div className="w-[1070px]">
             <Brands/>
             <Accordion/>
             <SpaSlider title={"SPA"} tags={["Spa", "Hotell"]}/>

@@ -1,14 +1,13 @@
 import React from "react";
-import css from "../styles/Brands.module.css"
 
 function Brands() {
     return (
-        <div className={css.container}>
-            <img style={{width: "300px", height: "21px"}} src="./brands/Svenkts.png" alt="Swenkts"/>
-            <img style={{width: "137px", height: "120px"}} src="./brands/YasuragiLogo.png" alt="YasuragiLogo"/>
-            <img style={{width: "163px", height: "19px"}} src="./brands/Marimekko.png" alt="Marimekko"/>
-            <img style={{width: "120px", height: "61px"}} src="./brands/Louis.png" alt="Louis"/>
-            <img style={{width: "173px", height: "22px"}} src="./brands/Global.png" alt="Global"/>
+        <div className="w-full h-[140px] flex items-center justify-between mt-10">
+            <img className="w-[300px] h-[21px]" src="./brands/Svenkts.png" alt="Swenkts"/>
+            <img className="w-[137px] h-[120px]" src="./brands/YasuragiLogo.png" alt="YasuragiLogo"/>
+            <img className="w-[163px] h-[19px]" src="./brands/Marimekko.png" alt="Marimekko"/>
+            <img className="w-[120px] h-[61px]" src="./brands/Louis.png" alt="Louis"/>
+            <img className="w-[173px] h-[22px]" src="./brands/Global.png" alt="Global"/>
 
         </div>
     )
