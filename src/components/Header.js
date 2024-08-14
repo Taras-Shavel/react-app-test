@@ -1,28 +1,95 @@
 /* eslint-disable react/button-has-type */
+import { Box, Button, Container, Typography } from '@mui/material'
 import React from 'react'
 
 function Header() {
   return (
-    <div className="w-full h-[90px] bg-white mt-10 flex justify-center items-center">
-      <div className="w-[1367px] h-[45px] flex justify-between px-4">
-        <div className="flex items-center w-[30%]">
-          <img
-            className="w-[26px] h-[23px] mr-2.5"
-            src="./Engagement.png"
-            alt="Engagement"
-          />
-          <h4 className="font-bold">GREATESTDAY</h4>
-        </div>
-        <div className="w-[300px] h-full flex  justify-end items-center">
-          <button className="h-full w-[130px] bg-black border-0 rounded-[5px] text-white font-bold text-sm mr-[30px]">
-            Our wedding
-          </button>
-          <button className="h-full w-[146px] bg-[#FAEBE3] border-0 rounded-[5px] font-bold text-sm">
-            Sign out
-          </button>
-        </div>
-      </div>
-    </div>
+    <Box
+      sx={{
+        width: '100%',
+        height: '90px',
+        bgcolor: 'white',
+        mt: 2.5,
+        display: 'flex',
+        justifyContent: 'center',
+        alignItems: 'center',
+      }}
+    >
+      <Container maxWidth="xl">
+        <Box
+          sx={{
+            height: '45px',
+            display: 'flex',
+            justifyContent: 'space-between',
+            px: 1,
+          }}
+        >
+          <Box
+            sx={{
+              display: 'flex',
+              alignItems: 'center',
+              width: '30%',
+            }}
+          >
+            <img
+              className="w-[26px] h-[23px] mr-2.5"
+              src="./Engagement.png"
+              alt="Engagement"
+            />
+            <Typography component="h4" fontWeight="bold">
+              GREATESTDAY
+            </Typography>
+          </Box>
+          <Box
+            sx={{
+              width: '300px',
+              height: '100%',
+              display: 'flex',
+              justifyContent: 'flex-end',
+              alignItems: 'center',
+            }}
+          >
+            <Button
+              sx={{
+                height: '100%',
+                width: '130px',
+                bgcolor: 'black',
+                border: 0,
+                borderRadius: '5px',
+                color: 'white',
+                fontWeight: 'bold',
+                fontSize: '14px',
+                marginRight: '30px',
+                textTransform: 'none',
+                '&:hover': {
+                  bgcolor: 'black',
+                },
+              }}
+            >
+              Our wedding
+            </Button>
+            <Button
+              sx={{
+                height: '100%',
+                width: '146px',
+                bgcolor: '#FAEBE3',
+                border: 0,
+                borderRadius: '5px',
+                fontWeight: 'bold',
+                fontSize: '14px',
+                textTransform: 'none',
+                color: 'black',
+                '&:hover': {
+                  bgcolor: '#FAEBE3',
+                },
+              }}
+            >
+              Sign out
+            </Button>
+          </Box>
+        </Box>
+      </Container>
+    </Box>
   )
 }
 

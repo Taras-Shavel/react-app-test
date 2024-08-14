@@ -1,6 +1,10 @@
 .containerSlider > div > div {
     display: flex !important;
+    /* gap: 50px; */
+    /* justify-content: center !important; */
     justify-content: space-between !important;
+    /* transform: translate3d(-1152px, 0px, 0px) !important;s */
+    /* transform: translate3d(-300px, 0px, 0px) !important;  */
 }
 .containerSlider > div > div > div {
    width: 250px !important;

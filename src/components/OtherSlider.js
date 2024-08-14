@@ -1,9 +1,7 @@
-/* eslint-disable react/no-array-index-key */
-/* eslint-disable jsx-a11y/no-noninteractive-element-interactions */
 /* eslint-disable jsx-a11y/img-redundant-alt */
-/* eslint-disable jsx-a11y/click-events-have-key-events */
 import React from 'react'
 import Slider from 'react-slick'
+import { Box, Button, Card, Typography } from '@mui/material'
 import css from '../styles/Slider.module.css'
 import itemsData from '../data/otherSlider.json'
 
@@ -28,75 +26,234 @@ function OtherSlider({ title, tags }) {
   }
 
   return (
-    <div className="w-full h-[344px] mt-10 box-border overflow-hidden">
-      <div className="w-full h-[32px] flex justify-between mb-5">
-        <h1 className="m-0 text-2xl font-bold">{title}</h1>
-        <div className="w-[145px] flex items-center justify-end">
-          <h4 className="m-0 font-bold mr-4">SEE ALL</h4>
-          <img
-            className="w-[24px] h-[24px] cursor-pointer mr-[8px]"
-            src="./buttons/leftButton.png"
-            alt="Left Button"
+    <Box
+      sx={{
+        width: '100%',
+        height: '344px',
+        marginTop: '40px',
+        boxSizing: 'border-box',
+        overflow: 'hidden',
+      }}
+    >
+      <Box
+        sx={{
+          width: '100%',
+          height: '32px',
+          display: 'flex',
+          justifyContent: 'space-between',
+          marginBottom: '20px',
+        }}
+      >
+        <Typography variant="h5" fontWeight="bold" m={0}>
+          {title}
+        </Typography>
+        <Box
+          sx={{
+            width: '145px',
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'flex-end',
+          }}
+        >
+          <Typography fontWeight="bold" mr={2}>
+            SEE ALL
+          </Typography>
+          <Button
+            sx={{
+              width: '24px',
+              height: '24px',
+              minWidth: 'auto',
+              marginRight: '8px',
+              padding: 0,
+              '& img': {
+                width: '100%',
+                height: '100%',
+              },
+            }}
             onClick={goToPrev}
-          />
-          <img
-            className="w-[24px] h-[24px] cursor-pointer"
-            src="./buttons/rightButton.png"
-            alt="Right Button"
+            onKeyDown={(e) => e.key === 'Enter' && goToPrev()}
+            aria-label="Previous Slide"
+          >
+            <img src="./buttons/leftButton.png" alt="Left Button" />
+          </Button>
+          <Button
+            sx={{
+              width: '24px',
+              height: '24px',
+              minWidth: 'auto',
+              padding: 0,
+              '& img': {
+                width: '100%',
+                height: '100%',
+              },
+            }}
             onClick={goToNext}
-          />
-        </div>
-      </div>
+            onKeyDown={(e) => e.key === 'Enter' && goToNext()}
+            aria-label="Next Slide"
+          >
+            <img src="./buttons/rightButton.png" alt="Right Button" />
+          </Button>
+        </Box>
+      </Box>
 
       <Slider ref={sliderRef} {...settings} className={css.containerSlider}>
-        {itemsData.map((item, index) => (
-          <div
-            key={index}
-            className="h-full w-[250px] box-border flex-shrink-0"
+        {itemsData.map((item) => (
+          <Box
+            key={item.id}
+            sx={{
+              height: '100%',
+              width: '250px',
+              boxSizing: 'border-box',
+              flexShrink: 0,
+            }}
           >
-            <div className="h-[150px] w-[250px] relative">
-              <img
-                className="h-full rounded-t-sm m-0"
-                src={item.imgSrc}
-                alt={`Image ${item.title}`}
-              />
-              <div className="w-[100px] h-[34px] rounded-sm p-2.5 bg-black absolute top-2.5 right-2.5 z-20 box-border flex items-center">
+            <Card height="292px" sx={{ borderRadius: '4px 4px 0 0 ' }}>
+              <Box sx={{ position: 'relative', height: 150 }}>
                 <img
-                  className="w-[12px] h-[11px] mr-2"
-                  src="./imageItem/iconLove.png"
-                  alt="icon love"
+                  height="150"
+                  src={item.imgSrc}
+                  alt={`Image of ${item.title}`}
                 />
-                <p className="m-0 text-xs font-bold text-white">LÄGG TILL</p>
-              </div>
-            </div>
-            <div className="h-[142px] w-[250px] m-0 rounded-b-sm bg-white pt-2">
-              <div className="flex h-[22px] px-3">
-                {tags.map((tag, tagIndex) => (
-                  <div
-                    key={tagIndex}
-                    className="rounded-full border border-black p-1.5 px-2 flex justify-center items-center mr-2 font-medium"
+                <Button
+                  sx={{
+                    width: '100px',
+                    height: '34px',
+                    borderRadius: '2px',
+                    padding: '10px',
+                    bgcolor: 'black',
+                    position: 'absolute',
+                    top: '10px',
+                    right: '10px',
+                    zIndex: 20,
+                    boxSizing: 'border-box',
+                    display: 'flex',
+                    alignItems: 'center',
+                    '&:hover': {
+                      bgcolor: 'black',
+                    },
+                  }}
+                  aria-label="Add to favorites"
+                >
+                  <img
+                    className="w-[12px] h-[11px] mr-2"
+                    src="./imageItem/iconLove.png"
+                    alt="Add to favorites"
+                  />
+                  <Typography
+                    fontSize="11px"
+                    fontWeight="bold"
+                    color="white"
+                    height="16px"
+                  >
+                    LÄGG TILL
+                  </Typography>
+                </Button>
+              </Box>
+            </Card>
+            <Box
+              sx={{
+                height: '142px',
+                width: '250px',
+                margin: 0,
+                borderRadius: '0 0 4px 4px',
+                bgcolor: '#FDF8F5',
+                paddingTop: '8px',
+              }}
+            >
+              <Box
+                sx={{
+                  display: 'flex',
+                  height: '22px',
+                  padding: '0 12px',
+                }}
+              >
+                {tags.map((tag) => (
+                  <Box
+                    key={tag}
+                    sx={{
+                      borderRadius: '9999px',
+                      border: '1px solid black',
+                      padding: '6px 8px',
+                      display: 'flex',
+                      justifyContent: 'center',
+                      alignItems: 'center',
+                      marginRight: '8px',
+                      fontWeight: 500,
+                      fontSize: '12px',
+                    }}
                   >
                     {tag}
-                  </div>
+                  </Box>
                 ))}
-              </div>
-              <div className="px-3 my-2 text-sm font-bold">{item.title}</div>
-              <div className="h-[16px] px-3 mb-2 text-xs font-medium">
+              </Box>
+              <Typography
+                sx={{
+                  padding: '0 12px',
+                  margin: '8px 0',
+                  fontSize: '14px',
+                  fontWeight: 700,
+                }}
+              >
+                {item.title}
+              </Typography>
+              <Typography
+                sx={{
+                  height: '16px',
+                  padding: '0 12px',
+                  marginBottom: '8px',
+                  fontSize: '12px',
+                  fontWeight: 500,
+                  fontFamily:
+                    "ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji'",
+                }}
+              >
                 {item.description}
-              </div>
-              <div className="h-[22px] flex items-center justify-between px-3">
-                <div className="w-[104px] h-[16px] text-xs font-normal flex items-center">
+              </Typography>
+              <Box
+                sx={{
+                  height: '22px',
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'space-between',
+                  padding: '0 12px',
+                }}
+              >
+                <Typography
+                  sx={{
+                    width: '115px',
+                    height: '16px',
+                    fontSize: '12px',
+                    fontWeight: 400,
+                    display: 'flex',
+                    alignItems: 'center',
+                  }}
+                >
                   {item.location}
-                </div>
-                <div className="w-[64px] h-[22px] rounded-sm p-1.5 px-1.5 bg-[#FAEBE3] text-xs font-medium flex justify-center items-center">
+                </Typography>
+                <Typography
+                  sx={{
+                    width: '64px',
+                    height: '22px',
+                    borderRadius: '2px',
+                    padding: '6px',
+                    bgcolor: '#FAEBE3',
+                    fontSize: '12px',
+                    fontWeight: 500,
+                    display: 'flex',
+                    justifyContent: 'center',
+                    alignItems: 'center',
+                    fontFamily:
+                      "ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji'",
+                  }}
+                >
                   {item.price}
-                </div>
-              </div>
-            </div>
-          </div>
+                </Typography>
+              </Box>
+            </Box>
+          </Box>
         ))}
       </Slider>
-    </div>
+    </Box>
   )
 }
 

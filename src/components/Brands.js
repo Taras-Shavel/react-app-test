@@ -1,8 +1,16 @@
 import React from 'react'
+import { Box } from '@mui/material'
 
 function Brands() {
   return (
-    <div className="w-full h-[140px] flex items-center justify-between mt-10">
+    <Box
+      display="flex"
+      alignItems="center"
+      justifyContent="space-between"
+      mt={2.5}
+      height={140}
+      width="100%"
+    >
       <img
         className="w-[300px] h-[21px]"
         src="./brands/Svenkts.png"
@@ -28,7 +36,7 @@ function Brands() {
         src="./brands/Global.png"
         alt="Global"
       />
-    </div>
+    </Box>
   )
 }
 
