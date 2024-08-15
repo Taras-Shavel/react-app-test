@@ -1,33 +1,50 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 import { Container, Box } from '@mui/material'
+import { useLocation, useNavigate } from 'react-router-dom'
 import Brands from './Brands'
-import Accordion from './Accordion'
-import SpaSlider from './SpaSlider'
-import OtherSlider from './OtherSlider'
+import AccordionUsage from './Accordion'
+import SliderComponent from './Slider'
 
 function CustomContainer() {
+  const navigate = useNavigate()
+  const location = useLocation()
+  const params = new URLSearchParams(location.search)
+  const categoryFromQuery = params.get('category')
+  const [selectedCategory, setSelectedCategory] = useState(null)
+
+  useEffect(() => {
+    if (categoryFromQuery) {
+      setSelectedCategory(categoryFromQuery)
+    } else {
+      setSelectedCategory(null)
+    }
+  }, [categoryFromQuery])
+
+  const handleCategorySelect = (category) => {
+    navigate(`/?category=${category}`)
+  }
+
   return (
     <Container maxWidth="lg">
       <Box>
         <Brands />
       </Box>
       <Box>
-        <Accordion />
+        <AccordionUsage onCategorySelect={handleCategorySelect} />
       </Box>
-      <Box>
-        <SpaSlider title="SPA" tags={['Spa', 'Hotell']} />
-      </Box>
-      <Box>
-        <OtherSlider title="KITCHEN" tags={['kitchen']} />
-      </Box>
-      <Box>
-        <OtherSlider title="INTERIOR DESIGN" tags={['Interior design']} />
-      </Box>
-      <Box>
-        <OtherSlider title="GIFTCARDS" tags={['Giftcard']} />
-      </Box>
+
       <Box sx={{ marginBottom: '40px' }}>
-        <OtherSlider title="OTHER" tags={['Spa', 'Hotell']} />
+        {selectedCategory ? (
+          <SliderComponent category={selectedCategory} />
+        ) : (
+          <>
+            <SliderComponent category="spa" />
+            <SliderComponent category="kitchen" />
+            <SliderComponent category="interior design" />
+            <SliderComponent category="giftcards" />
+            <SliderComponent category="other" />
+          </>
+        )}
       </Box>
     </Container>
   )

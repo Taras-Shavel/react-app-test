@@ -1,8 +1,10 @@
-/* eslint-disable react/button-has-type */
 import { Box, Button, Container, Typography } from '@mui/material'
 import React from 'react'
+import { useNavigate } from 'react-router-dom'
 
 function Header() {
+  const navigate = useNavigate()
+
   return (
     <Box
       sx={{
@@ -29,7 +31,9 @@ function Header() {
               display: 'flex',
               alignItems: 'center',
               width: '30%',
+              cursor: 'pointer',
             }}
+            onClick={() => navigate('/')}
           >
             <img
               className="w-[26px] h-[23px] mr-2.5"
@@ -42,8 +46,8 @@ function Header() {
           </Box>
           <Box
             sx={{
-              width: '300px',
-              height: '100%',
+              width: 300,
+              height: 1,
               display: 'flex',
               justifyContent: 'flex-end',
               alignItems: 'center',

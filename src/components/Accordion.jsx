@@ -1,17 +1,11 @@
-/* eslint-disable jsx-a11y/no-static-element-interactions */
-/* eslint-disable jsx-a11y/click-events-have-key-events */
-
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
+import { useLocation } from 'react-router-dom'
 import Accordion from '@mui/material/Accordion'
 import AccordionSummary from '@mui/material/AccordionSummary'
 import AccordionDetails from '@mui/material/AccordionDetails'
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore'
-import Modal from '@mui/material/Modal'
 import Box from '@mui/material/Box'
 import Typography from '@mui/material/Typography'
-import IconButton from '@mui/material/IconButton'
-import CloseIcon from '@mui/icons-material/Close'
-import Paper from '@mui/material/Paper'
 import List from '@mui/material/List'
 import ListItem from '@mui/material/ListItem'
 import ListItemText from '@mui/material/ListItemText'
@@ -19,40 +13,36 @@ import ListItemIcon from '@mui/material/ListItemIcon'
 import Avatar from '@mui/material/Avatar'
 import accordionData from '../data/accordion.json'
 
-const modalStyle = {
-  position: 'absolute',
-  top: '50%',
-  left: '50%',
-  transform: 'translate(-50%, -50%)',
-  width: 400,
-  bgcolor: 'background.paper',
-  boxShadow: 24,
-  p: 4,
-}
+function AccordionUsage({ onCategorySelect }) {
+  const [expanded, setExpanded] = useState(false)
+  const [selectedCategory, setSelectedCategory] = useState('')
+  const location = useLocation()
+  const [categoryTwo, setCategoryTwo] = useState(null)
 
-function AccordionUsage() {
-  const [open, setOpen] = useState(false)
-  const [selectedItem, setSelectedItem] = useState(null)
+  useEffect(() => {
+    const params = new URLSearchParams(location.search)
+    const categoryFromQuery = params.get('category')
+    setCategoryTwo(categoryFromQuery)
+  }, [location.search])
 
-  const handleOpen = (item) => {
-    setSelectedItem(item)
-    setOpen(true)
-  }
-
-  const handleClose = () => {
-    setOpen(false)
-    setSelectedItem(null)
+  const handleItemClick = (item) => {
+    const category = item.title.toLowerCase()
+    onCategorySelect(category)
+    setSelectedCategory(category)
+    setExpanded(false)
   }
 
   return (
     <Box sx={{ width: '100%', p: 2, bgcolor: '#F5DACC' }}>
-      <Accordion>
+      <Accordion expanded={expanded} onChange={() => setExpanded(!expanded)}>
         <AccordionSummary
           expandIcon={<ExpandMoreIcon />}
           aria-controls="panel1-content"
           id="panel1-header"
         >
-          <Typography sx={{ fontWeight: 700 }}>CATEGORY</Typography>
+          <Typography sx={{ fontWeight: 700 }}>
+            {categoryTwo ? categoryTwo.toUpperCase() : 'CATEGORY'}
+          </Typography>
         </AccordionSummary>
         <AccordionDetails
           sx={{
@@ -67,7 +57,6 @@ function AccordionUsage() {
               <ListItem
                 key={item.id}
                 button
-                // component={Paper}
                 sx={{
                   mb: 1,
                   p: 1.5,
@@ -78,7 +67,7 @@ function AccordionUsage() {
                     bgcolor: '#FAEBE3',
                   },
                 }}
-                onClick={() => handleOpen(item)}
+                onClick={() => handleItemClick(item)}
               >
                 <ListItemIcon sx={{ minWidth: '24px', marginRight: '16px' }}>
                   <Avatar
@@ -99,36 +88,6 @@ function AccordionUsage() {
           </List>
         </AccordionDetails>
       </Accordion>
-
-      {selectedItem && (
-        <Modal
-          open={open}
-          onClose={handleClose}
-          aria-labelledby="modal-title"
-          aria-describedby="modal-description"
-        >
-          <Box sx={modalStyle}>
-            <IconButton
-              aria-label="close"
-              onClick={handleClose}
-              sx={{
-                position: 'absolute',
-                right: 8,
-                top: 8,
-                color: 'grey',
-              }}
-            >
-              <CloseIcon />
-            </IconButton>
-            <Typography id="modal-title" variant="h6" component="h2">
-              {selectedItem.title}
-            </Typography>
-            <Typography id="modal-description" sx={{ mt: 2 }}>
-              Details about element:
-            </Typography>
-          </Box>
-        </Modal>
-      )}
     </Box>
   )
 }

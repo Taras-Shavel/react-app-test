@@ -1,0 +1,186 @@
+[
+    {
+        "imgSrc": "./imageItem/SpaSlider/Yasuragi.png",
+        "title": "YASURAGI",
+        "description": "Upplev ett Spa i japansk anda.",
+        "location": "Stockholm, Sverige",
+        "price": "7 995 KR",
+        "tags":["Spa", "Hotell"],
+        "category": "spa"
+    },
+    {
+        "imgSrc": "./imageItem/SpaSlider/Hotel.png",
+        "title": "STEAM HOTEL",
+        "description": "Relaxing spa experience.",
+        "location": "Gothenburg, Sverige",
+        "price": "5 995 KR",
+        "tags":["Spa", "Hotell"],
+        "category": "spa"
+    },
+    {
+        "imgSrc": "./imageItem/SpaSlider/WoodHotel.png",
+        "title": "THE WOOD HOTEL",
+        "description": "Luxurious spa services.",
+        "location": "Malmö, Sverige",
+        "price": "8 995 KR",
+        "tags":["Spa", "Hotell"],
+        "category": "spa"
+    },
+    {
+        "imgSrc": "./imageItem/SpaSlider/HotelTwoRow.png",
+        "title": "KOSTA BODA ART HOTEL WITH A TWO ROW TITLE",
+        "description": "Organic treatments for you.",
+        "location": "Uppsala, Sverige",
+        "price": "6 995 KR",
+        "tags":["Spa", "Hotell"],
+        "category": "spa"
+    },
+
+    {
+        "imgSrc" : "./imageItem/OtherSlider/svenskt.png",
+        "title": "SVENSKT TENN",
+        "description": "Upplev ett Spa i japansk anda.",
+        "location": "Stockholm, Sverige",
+        "price": "7 995 KR",
+        "tags":["kitchen"],
+        "category": "kitchen"
+    },
+    {
+        "imgSrc" : "./imageItem/OtherSlider/knives.png",
+        "title": "GLOBAL KNIVES",
+        "description": "Relaxing spa experience.",
+        "location": "Gothenburg, Sverige",
+        "price": "7 995 KR",
+        "tags":["kitchen"],
+        "category":"kitchen"
+    },
+    {
+        "imgSrc": "./imageItem/OtherSlider/satakeKnives.png",
+        "title": "SATAKE KNIVES",
+        "description": "Luxurious spa services.",
+        "location": "Malmö, Sverige",
+        "price": "7 995 KR",
+        "tags":["kitchen"],
+        "category": "kitchen"
+    },
+    {
+        "imgSrc": "./imageItem/OtherSlider/marimekko.png",
+        "title": "MARIMEKKO",
+        "description": "Organic treatments for you.",
+        "location": "Uppsala, Sverige",
+        "price": "7 995 KR",
+        "tags":["kitchen"],
+        "category":"kitchen"
+    },
+
+    {
+        "imgSrc" : "./imageItem/OtherSlider/svenskt.png",
+        "title": "SVENSKT TENN",
+        "description": "Upplev ett Spa i japansk anda.",
+        "location": "Stockholm, Sverige",
+        "price": "7 995 KR",
+        "tags": ["Interior design"],
+        "category": "interior design"
+    },
+    {
+        "imgSrc" : "./imageItem/OtherSlider/knives.png",
+        "title": "GLOBAL KNIVES",
+        "description": "Relaxing spa experience.",
+        "location": "Gothenburg, Sverige",
+        "price": "7 995 KR",
+        "tags": ["Interior design"],
+        "category":"interior design"
+    },
+    {
+        "imgSrc": "./imageItem/OtherSlider/satakeKnives.png",
+        "title": "SATAKE KNIVES",
+        "description": "Luxurious spa services.",
+        "location": "Malmö, Sverige",
+        "price": "7 995 KR",
+        "tags": ["Interior design"],
+        "category": "interior design"
+    },
+    {
+        "imgSrc": "./imageItem/OtherSlider/marimekko.png",
+        "title": "MARIMEKKO",
+        "description": "Organic treatments for you.",
+        "location": "Uppsala, Sverige",
+        "price": "7 995 KR",
+        "tags": ["Interior design"],
+        "category":"interior design"
+    },
+
+    {
+        "imgSrc" : "./imageItem/OtherSlider/svenskt.png",
+        "title": "SVENSKT TENN",
+        "description": "Upplev ett Spa i japansk anda.",
+        "location": "Stockholm, Sverige",
+        "price": "7 995 KR",
+        "tags": ["Giftcards"],
+        "category": "giftcards"
+    },
+    {
+        "imgSrc" : "./imageItem/OtherSlider/knives.png",
+        "title": "GLOBAL KNIVES",
+        "description": "Relaxing spa experience.",
+        "location": "Gothenburg, Sverige",
+        "price": "7 995 KR",
+        "tags": ["Giftcards"],
+        "category":"giftcards"
+    },
+    {
+        "imgSrc": "./imageItem/OtherSlider/satakeKnives.png",
+        "title": "SATAKE KNIVES",
+        "description": "Luxurious spa services.",
+        "location": "Malmö, Sverige",
+        "price": "7 995 KR",
+        "tags": ["Giftcards"],
+        "category": "giftcards"
+    },
+    {
+        "imgSrc": "./imageItem/OtherSlider/marimekko.png",
+        "title": "MARIMEKKO",
+        "description": "Organic treatments for you.",
+        "location": "Uppsala, Sverige",
+        "price": "7 995 KR",
+        "tags": ["Giftcards"],
+        "category":"giftcards"
+    },
+
+    {
+        "imgSrc" : "./imageItem/OtherSlider/svenskt.png",
+        "title": "SVENSKT TENN",
+        "description": "Upplev ett Spa i japansk anda.",
+        "location": "Stockholm, Sverige",
+        "price": "7 995 KR",
+        "tags": ["Spa", "Hotell"],
+        "category": "other"
+    },
+    {
+        "imgSrc" : "./imageItem/OtherSlider/knives.png",
+        "title": "GLOBAL KNIVES",
+        "description": "Relaxing spa experience.",
+        "location": "Gothenburg, Sverige",
+        "price": "7 995 KR",
+        "tags": ["Spa", "Hotell"],
+        "category":"other"
+    },
+    {
+        "imgSrc": "./imageItem/OtherSlider/satakeKnives.png",
+        "title": "SATAKE KNIVES",
+        "description": "Luxurious spa services.",
+        "location": "Malmö, Sverige",
+        "price": "7 995 KR",
+        "tags": ["Spa", "Hotell"],
+        "category": "other"
+    },
+    {
+        "imgSrc": "./imageItem/OtherSlider/marimekko.png",
+        "title": "MARIMEKKO",
+        "description": "Organic treatments for you.",
+        "location": "Uppsala, Sverige",
+        "price": "7 995 KR",
+        "tags": ["Spa", "Hotell"],
+        "category":"other"
+    }
+]

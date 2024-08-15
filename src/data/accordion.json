@@ -1,8 +1,8 @@
 [
-    {"id": 1, "title": "Photorapher", "icon": "./AccordionIcons/Photorapher.png"},
-    {"id": 2, "title": "DJ", "icon": "./AccordionIcons/DJ.png"},
-    {"id": 3, "title": "Band", "icon": "./AccordionIcons/Band.png"},
-    {"id": 4, "title": "Decorations", "icon": "./AccordionIcons/Decorations.png"},
+    {"id": 1, "title": "Spa", "icon": "./AccordionIcons/Photorapher.png"},
+    {"id": 2, "title": "Kitchen", "icon": "./AccordionIcons/DJ.png"},
+    {"id": 3, "title": "Interior Design", "icon": "./AccordionIcons/Band.png"},
+    {"id": 4, "title": "Giftcards", "icon": "./AccordionIcons/Decorations.png"},
     {"id": 5, "title": "Frorist", "icon": "./AccordionIcons/Florist.png"},
     {"id": 6, "title": "Make up artist", "icon": "./AccordionIcons/MakeUp.png"},
     {"id": 7, "title": "Bakery", "icon": "./AccordionIcons/Bakery.png"}
